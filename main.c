@@ -1,7 +1,7 @@
 #include<stdio.h>
 
-const char consonants[] = {'a', 'e', 'i', 'o', 'u'};
-const char vocals[] = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
+const char consonants[5] = {'a', 'e', 'i', 'o', 'u'};
+const char vocals[20] = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
 
 int main()
 {
