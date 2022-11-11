@@ -27,15 +27,15 @@ int main()
 
 		if (genRes.success == 1)
 		{
-			printf("\nSuccessfully generated:\n%s\n", genRes.string);
+			printf("\nSuccessfully generated:\n%s", genRes.string);
 		}
 		else
 		{
-			printf("\n%s\n", genRes.string);
+			printf("\n%s", genRes.string);
 		}
 	}
 
-	printf("=====[NAME GENERATOR]=====");
+	printf("\n=====[NAME GENERATOR]=====");
 
 	return 0;
 }
