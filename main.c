@@ -15,7 +15,7 @@ const char consonants[20] = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 
 
 int main()
 {
-	/* This will set a random seed for the rand() function based on the current time*/
+	/* This will set a random seed for the rand() function based on the current time */
 	srand((unsigned int)time(NULL));
 
 	printf("=====[NAME GENERATOR]=====\nHow long should the name be?\n");
@@ -24,7 +24,7 @@ int main()
 	/* 
 	 * The input would be a number and ENTER for confirmation, so its actually 2 inputs. 
 	 * We have to catch the \n (from hitting ENTER) so the input stream is cleared.
-	 * If we don't catch the ENTER here, the getchar later at 'Press [ENTER] to exit...' will think we hit ENTER even tho we didn't.
+	 * If we don't catch the ENTER here, the getchar later at 'Press [ENTER] to exit...' will think we already hit ENTER even tho we didn't.
 	 */
 	char catchEnter = 0;
 	
@@ -80,6 +80,7 @@ GeneratorResult generateName(int length)
 		}
 	}
 
+	/* Putting 0 at the end of the array to indicate the end of the string. */
 	result[length] = '\0';
 
 	GeneratorResult r = { 1, result };
