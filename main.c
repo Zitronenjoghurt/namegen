@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#include<conio.h>
 
 typedef struct
 {
@@ -16,14 +15,21 @@ const char consonants[20] = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 
 
 int main()
 {
+	/* This will set a random seed for the rand() function based on the current time*/
 	srand((unsigned int)time(NULL));
 
 	printf("=====[NAME GENERATOR]=====\nHow long should the name be?\n");
-	fflush(stdin);
 	fflush(stdout);
 
+	/* 
+	 * The input would be a number and ENTER for confirmation, so its actually 2 inputs. 
+	 * We have to catch the \n (from hitting ENTER) so the input stream is cleared.
+	 * If we don't catch the ENTER here, the getchar later at 'Press [ENTER] to exit...' will think we hit ENTER even tho we didn't.
+	 */
+	char catchEnter = 0;
+	
 	int length = 1;
-	if (scanf_s("%i", &length) == 1) 
+	if (scanf_s("%i%c", &length, &catchEnter, 1) == 2) 
 	{
 		GeneratorResult genRes = generateName(length);
 
@@ -49,8 +55,10 @@ int main()
 
 GeneratorResult generateName(int length)
 {
+	/* Allocating length + 1 char's because you will need to push an \0 at the end to tell when the string ends. */
 	char* result = calloc((size_t)(length + 1), sizeof(char));
 
+	/* Catching possible null pointer exception if there was an error while allocating memory for the result array. */
 	if (result == NULL)
 	{
 		GeneratorResult r = { 0, "ERROR ALLOCATING MEMORY" };
