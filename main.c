@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<conio.h>
 
 typedef struct
 {
@@ -18,6 +19,7 @@ int main()
 	srand((unsigned int)time(NULL));
 
 	printf("=====[NAME GENERATOR]=====\nHow long should the name be?\n");
+	fflush(stdin);
 	fflush(stdout);
 
 	int length = 1;
@@ -34,6 +36,11 @@ int main()
 			printf("\n%s", genRes.string);
 		}
 	}
+
+	printf("\n\nPress [ENTER] to exit...");
+
+	fflush(stdout);
+	char ch = getchar();
 
 	printf("\n=====[NAME GENERATOR]=====");
 
