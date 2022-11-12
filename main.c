@@ -80,6 +80,9 @@ GeneratorResult generateName(int length)
 		}
 	}
 
+	/* Uppercasing the first letter (this only works because I know there can only be basic ASCII letters in result) */
+	result[0] = result[0] - 32;
+
 	/* Putting 0 at the end of the array to indicate the end of the string. */
 	result[length] = '\0';
 
