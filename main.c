@@ -4,6 +4,20 @@
 
 typedef struct
 {
+	char letter;
+	char* nodes;
+	//int* relativeWeights;
+	//int totalWeight;
+} LetterNeuron;
+
+typedef struct
+{
+	int neuronCount;
+	LetterNeuron* neurons;
+} SmolBrain;
+
+typedef struct
+{
 	int success;
 	char* string;
 } GeneratorResult;
